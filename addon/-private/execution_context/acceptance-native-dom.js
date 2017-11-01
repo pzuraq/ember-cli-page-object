@@ -4,6 +4,8 @@ import {
   visit
 } from 'ember-native-dom-helpers';
 
+import wait from 'ember-test-helpers';
+
 export default function AcceptanceExecutionContext(pageObjectNode) {
   ExecutionContext.call(this, pageObjectNode);
 }
@@ -15,7 +17,7 @@ AcceptanceExecutionContext.prototype.visit = function() {
 };
 
 AcceptanceExecutionContext.prototype.runAsync = function(cb) {
-  window.wait().then(() => {
+  (window.wait || wait)().then(() => {
     cb(this);
   });
 

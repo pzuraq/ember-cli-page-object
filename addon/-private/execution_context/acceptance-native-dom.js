@@ -4,7 +4,7 @@ import {
   visit
 } from 'ember-native-dom-helpers';
 
-import wait from 'ember-test-helpers';
+import wait from 'ember-test-helpers/wait';
 
 export default function AcceptanceExecutionContext(pageObjectNode) {
   ExecutionContext.call(this, pageObjectNode);

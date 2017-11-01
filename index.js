@@ -31,6 +31,7 @@ module.exports = {
     this.app = app;
 
     if (this._shouldIncludeFiles()) {
+      this.import('vendor/shims/-jquery-module.js');
       this.import('vendor/shims/-jquery.js', { prepend: true });
       this.import('vendor/ecpo-jquery/dist/jquery.js', { prepend: true });
     }

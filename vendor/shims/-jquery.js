@@ -8,11 +8,5 @@
   var jq = self['$'].noConflict();
   delete self['jQuery'];
 
-  function vendorModule() {
-    'use strict';
-
-    return { 'default': jq };
-  }
-
-  define('-jquery', [], vendorModule);
+  window.ecpoJquery = jq;
 })();
